@@ -15,22 +15,6 @@ from django.contrib.auth import authenticate,login,logout
 from django.utils.decorators import method_decorator
 
 
-# def is_user(fn):
-
-#     def wrapper(request,**kwargs):
-
-#         id=kwargs.get("pk")
-
-#         obj=TaskModel.objects.get(id=id)
-
-#         if obj.user_id==request.user:
-
-#             return fn(request,**kwargs)
-#         else:
-
-#             return redirect("login")
-        
-#     return wrapper
 
 def is_user(fn):
     def wrapper(request, **kwargs):
@@ -259,10 +243,3 @@ class UserdetailsView(View):
 
         return render(request,"userdetails.html",{"total":total,"incomplete":incomplete,"complete":complete,"user":user})
     
-class TranView(View):
-
-    def get(self,request):
-
-        
-
-        return render(request,"tranpa.html")
