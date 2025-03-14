@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container d-flex flex-column align-items-center mt-5">
+        <h2><u>ToDo List</u></h2>
+    <table class="table table-striped table-hover table-bordered">
+
+        <tr>
+            <th>Task Name</th>
+            <th>Update</th>
+            <th>Delete</th>
+            <th>Detail View</th>
+            <th>Status</th>
+        </tr>
+    {%for i in data%}
+        <tr>
+            <td>{{i.task_name}}</td>
+            <td><a href="{%url 'update' i.id %}" class="btn btn-outline-info">Edit</a></td>
+            <td><a href="{%url 'delete' i.id %}" class="btn btn-outline-danger">Delete</a></td>
+            <td><a href="{%url 'details' i.id %}" class="btn btn-outline-success">Detail</a></td>
+            {%if i.is_completed == False %}
+            <td><a href="{%url 'edit' i.id%}" class="btn btn-primary">Not Completed</a></td>
+            {%else%}
+            <td><i class="fa-solid fa-circle-check"></i></td> 
+            {%endif%}           
+        </tr>
+        
+    {%endfor%}
+</table>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Card</title>
+    <style>
+        body {
+            /* background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center/cover; */
+            background-color:rgb(212, 106, 106);;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 300px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1); /* Transparent white */
+            border-radius: 15px;
+            backdrop-filter: blur(10px); /* Glassmorphism effect */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: rgb(238, 11, 11);
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .card p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2 >Transparent Card</h2>
+        <p>This is a beautiful glassmorphism card with a transparent effect.</p>
+    </div>
+
+</body>
+</html>
